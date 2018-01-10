@@ -1,3 +1,4 @@
+<!-- RELEASE TIME : @{time}@ -->
 <html lang="zh-cn">
 	
  <head> 

@@ -8,6 +8,7 @@ import exp.esc.bean.App;
 import exp.libs.utils.encode.CryptoUtils;
 import exp.libs.utils.io.FileUtils;
 import exp.libs.utils.other.StrUtils;
+import exp.libs.utils.time.TimeUtils;
 import exp.libs.warp.tpl.Template;
 
 /**
@@ -34,6 +35,7 @@ public class Convertor {
 		List<String> tables = toTables(apps);
 		Template tpl = new Template(Config.PAGE_TPL, Config.DEFAULT_CHARSET);
 		tpl.set("tables", StrUtils.concat(tables, ""));
+		tpl.set("time", TimeUtils.getSysDate());
 		return FileUtils.write(Config.PAGE_PATH, tpl.getContent(), Config.DEFAULT_CHARSET, false);
 	}
 	
