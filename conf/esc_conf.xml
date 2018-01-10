@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config hint="常用配置（覆写全量配置文件的对应项）">
+  
+  <apps hint="授权应用列表">
+    <app>
+      <name caption="应用名称">bilibili-plugin</name>
+      <versions caption="有效版本列表">1.9</versions>
+      <time caption="到期时间">2018-03-01 00:00:00</time>
+      <blacklist caption="黑名单列表"></blacklist>
+    </app>
+    
+    <app>
+      <name caption="应用名称">exp-libs</name>
+      <versions caption="有效版本列表">1.0</versions>
+      <time caption="到期时间">2222-12-31 00:00:00</time>
+      <blacklist caption="黑名单列表"></blacklist>
+    </app>
+  </apps>
+   
+</config>
