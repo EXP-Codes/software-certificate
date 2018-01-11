@@ -4,7 +4,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import exp.certificate.Config;
 import exp.certificate.bean.App;
@@ -26,6 +30,8 @@ import exp.libs.warp.tpl.Template;
  */
 public class Convertor {
 
+	private final static Logger log = LoggerFactory.getLogger(Convertor.class);
+	
 	/** 私有化构造函数 */
 	protected Convertor() {}
 	
@@ -39,7 +45,8 @@ public class Convertor {
 		Template tpl = new Template(Config.PAGE_TPL, Config.DEFAULT_CHARSET);
 		tpl.set("tables", StrUtils.concat(tables, ""));
 		tpl.set("time", TimeUtils.getSysDate());
-		return FileUtils.write(Config.PAGE_PATH, tpl.getContent(), Config.DEFAULT_CHARSET, false);
+		return FileUtils.write(Config.PAGE_PATH, 
+				tpl.getContent(), Config.DEFAULT_CHARSET, false);
 	}
 	
 	/**
@@ -61,12 +68,41 @@ public class Convertor {
 	}
 	
 	/**
+	 * 从页面提取应用授权信息
+	 * @param pageSource 页面源码
+	 * @param appName 应用名称
+	 * @return app对象
+	 */
+	@SuppressWarnings("unchecked")
+	public static App toApp(final String pageSource, final String appName) {
+		App app = null;
+		try {
+			Document doc = DocumentHelper.parseText(pageSource);
+			Element html = doc.getRootElement();
+			Element body = html.element("body");
+			Element div = body.element("div").element("div");
+			Iterator<Element> tables = div.elementIterator();
+			while(tables.hasNext()) {
+				Element table = tables.next();
+				String name = table.attributeValue("id");
+				if(appName.equals(name)) {
+					app = Convertor.toApp(table);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			log.error("从页面提取应用 [{}] 信息失败:\r\n{}", appName, pageSource, e);
+		}
+		return app;
+	}
+	
+	/**
 	 * 根据页面的&lt;table&gt;模块还原对应的App对象
 	 * @param table &lt;table&gt;模块
 	 * @return App对象
 	 */
 	@SuppressWarnings("unchecked")
-	public static App toApp(Element table) {
+	private static App toApp(Element table) {
 		String name = "";
 		String versions = "";
 		String time = "";
