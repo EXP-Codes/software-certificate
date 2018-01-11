@@ -1,10 +1,13 @@
-package exp.esc.core;
+package exp.certificate.core;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import exp.esc.Config;
-import exp.esc.bean.App;
+import org.dom4j.Element;
+
+import exp.certificate.Config;
+import exp.certificate.bean.App;
 import exp.libs.utils.encode.CryptoUtils;
 import exp.libs.utils.io.FileUtils;
 import exp.libs.utils.other.StrUtils;
@@ -55,6 +58,42 @@ public class Convertor {
 			tables.add(tpl.getContent());
 		}
 		return tables;
+	}
+	
+	/**
+	 * 根据页面的&lt;table&gt;模块还原对应的App对象
+	 * @param table &lt;table&gt;模块
+	 * @return App对象
+	 */
+	@SuppressWarnings("unchecked")
+	public static App toApp(Element table) {
+		String name = "";
+		String versions = "";
+		String time = "";
+		String blacklist = "";
+		
+		Element tbody = table.element("tbody");
+		Iterator<Element> trs = tbody.elementIterator();
+		while(trs.hasNext()) {
+			Element tr = trs.next();
+			List<Element> ths = tr.elements();
+			String key = ths.get(0).getTextTrim();
+			String val = ths.get(1).getTextTrim();
+			
+			if("SOFTWARE-NAME".equals(key)) {
+				name = val;
+				
+			} else if("VERSIONS".equals(key)) {
+				versions = CryptoUtils.deDES(val);
+				
+			} else if("TIME".equals(key)) {
+				time = CryptoUtils.deDES(val);
+				
+			} else if("BLACK-LIST".equals(key)) {
+				blacklist = CryptoUtils.deDES(val);
+			}
+		}
+		return new App(name, versions, time, blacklist);
 	}
 	
 }

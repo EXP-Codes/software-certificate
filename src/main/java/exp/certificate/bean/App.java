@@ -1,4 +1,4 @@
-package exp.esc.bean;
+package exp.certificate.bean;
 
 /**
  * <PRE>
