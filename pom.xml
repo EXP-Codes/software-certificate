@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<!--项目基本信息(必填)-->
-	<groupId>exp.sc</groupId>
+	<groupId>exp.certificate</groupId>
 	<artifactId>exp-certificate</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -243,9 +243,9 @@
 						</goals>
 						<configuration>
 							<target>
-								<echo>拷贝资源数据</echo>
-								<copy todir="${release.dir}/data">
-									<fileset dir="data"></fileset>
+								<echo>拷贝页面样式数据</echo>
+								<copy todir="${release.dir}/css">
+									<fileset dir="css"></fileset>
 								</copy>
 								<echo>拷贝项目配置文件</echo>
 								<copy todir="${release.dir}/conf">
