@@ -32,9 +32,9 @@ public class Config {
 	
 	private final static String CONF_PATH = "./conf/esc_conf.xml";
 	
-	public final static String PAGE_TPL = "./conf/template/index.tpl";
+	public final static String PAGE_TPL = "/exp/certificate/core/index.tpl";
 	
-	public final static String TABLE_TPL = "./conf/template/table.tpl";
+	public final static String TABLE_TPL = "/exp/certificate/core/table.tpl";
 	
 	public final static String PAGE_PATH = "./index.html";
 	
