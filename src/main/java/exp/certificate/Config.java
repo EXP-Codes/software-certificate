@@ -30,7 +30,7 @@ public class Config {
 	
 	public final static String DEFAULT_CHARSET = Charset.UTF8;
 	
-	private final static String CONF_PATH = "./conf/esc_conf.xml";
+	private final static String CONF_PATH = "./conf/ec_conf.xml";
 	
 	public final static String PAGE_TPL = "/exp/certificate/core/index.tpl";
 	
