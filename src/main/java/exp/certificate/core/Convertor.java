@@ -62,6 +62,7 @@ public class Convertor {
 			tpl.set("versions", CryptoUtils.toDES(app.getVersions()));
 			tpl.set("time", CryptoUtils.toDES(app.getTime()));
 			tpl.set("blacklist", CryptoUtils.toDES(app.getBlacklist()));
+			tpl.set("whitelist", CryptoUtils.toDES(app.getWhitelist()));
 			tables.add(tpl.getContent());
 		}
 		return tables;
@@ -107,6 +108,7 @@ public class Convertor {
 		String versions = "";
 		String time = "";
 		String blacklist = "";
+		String whitelist = "";
 		
 		Element tbody = table.element("tbody");
 		Iterator<Element> trs = tbody.elementIterator();
@@ -127,9 +129,13 @@ public class Convertor {
 				
 			} else if("BLACK-LIST".equals(key)) {
 				blacklist = CryptoUtils.deDES(val);
+				
+			} else if("WHITE-LIST".equals(key)) {
+				whitelist = CryptoUtils.deDES(val);
+				
 			}
 		}
-		return new App(name, versions, time, blacklist);
+		return new App(name, versions, time, blacklist, whitelist);
 	}
 	
 }

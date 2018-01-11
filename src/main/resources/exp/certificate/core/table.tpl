@@ -17,6 +17,10 @@
        <td>BLACK-LIST</td> 
        <td>@{blacklist}@</td> 
       </tr> 
+      <tr> 
+       <td>WHITE-LIST</td> 
+       <td>@{whitelist}@</td> 
+      </tr>
      </tbody> 
     </table> 
    </div> 

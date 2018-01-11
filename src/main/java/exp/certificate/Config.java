@@ -71,8 +71,9 @@ public class Config {
 				String versions = app.elementText("versions");
 				String time = app.elementText("time");
 				String blacklist = app.elementText("blacklist");
+				String whitelist = app.elementText("whitelist");
 				
-				appList.add(new App(name, versions, time, blacklist));
+				appList.add(new App(name, versions, time, blacklist, whitelist));
 			}
 			
 		} catch(Exception e) {
