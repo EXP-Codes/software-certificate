@@ -7,13 +7,13 @@
 
 body
 		{
-		font-family:PingFangSC-Regular, Verdana, Arial, '?¡é¨¨¨ª??o¨²','??¨¬?';
+		font-family:PingFangSC-Regular, Verdana, Arial, 'å¾®è½¯é›…é»‘','å®‹ä½“';
 		font-size:14px;
 		}
 
 strong
 {
-		font-family:'?¡é¨¨¨ª??o¨²';
+		font-family:'å¾®è½¯é›…é»‘';
 		font-size:18px;
 		color:#3f3f3f;
 		font-weight:800;
@@ -27,7 +27,7 @@ div#maincontent h2
 
 body#homefirst div#maincontent, div#maincontent h1, div#maincontent h2, div#sidebar div#ad h2
 		{
-		font-family:'?¡é¨¨¨ª??o¨²';
+		font-family:'å¾®è½¯é›…é»‘';
 		}
 
 pre, pre code, div#maincontent input, div#maincontent select, div#maincontent textarea
@@ -203,7 +203,7 @@ div#footer
 		background: #f0f0f0;
 		border-top: 0px solid #fff;
 		background: #fdfcf8 url(/ui2017/footer.png) top left repeat-x;
-		font-family:PingFangSC-Regular, '?¡é¨¨¨ª??o¨²', Verdana, Arial, '??¨¬?';
+		font-family:PingFangSC-Regular, 'å¾®è½¯é›…é»‘', Verdana, Arial, 'å®‹ä½“';
 		}
 
 div#footer #p1
@@ -898,7 +898,7 @@ div#maincontent select
 }
 
 
-/* ----------------------------------- ¡À¨ª?? ----------------------------------- */
+/* ----------------------------------- è¡¨æ ¼ ----------------------------------- */
 
 table.dataintable {
 	margin-top:15px;
@@ -1279,7 +1279,7 @@ div#maincontent p.tiy{
 	cursor:pointer;
 	white-space:nowrap;
 	box-shadow:0px 2px 6px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
-	font-family:'?¡é¨¨¨ª??o¨²';
+	font-family:'å¾®è½¯é›…é»‘';
 	border-radius:2px;
 }
 
@@ -1314,7 +1314,7 @@ div#navsecond h2, div#sidebar h2	{
 	color:#000;
 	display:block;
 	border-bottom:0px solid #ddd;
-	font-family:'?¡é¨¨¨ª??o¨²';
+	font-family:'å¾®è½¯é›…é»‘';
 	}
 
 div#navsecond h2#link_about, div#navsecond h2#link_help	{
@@ -1353,7 +1353,7 @@ div#navsecond h2#link_about a:hover, div#navsecond h2#link_help a:hover	{
 div#navsecond ul, div#navsecond li, div#sidebar ul, div#sidebar li	{
 	margin: 0;
 	padding: 0;
-	font-family:'?¡é¨¨¨ª??o¨²';
+	font-family:'å¾®è½¯é›…é»‘';
 	}
 
 

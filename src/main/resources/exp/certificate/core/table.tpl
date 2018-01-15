@@ -1,4 +1,4 @@
-   <div> 
+   <div>
     <table id="@{name}@" class="dataintable"> 
      <tbody> 
       <tr> 

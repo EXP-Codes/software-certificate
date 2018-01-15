@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 	
  <head> 
-  <meta charset="UTF-8" /> 
+  <meta charset="UTF-8" />
   <meta name="robots" content="noarchive" /> 
   <meta name="author" content="EXP" /> 
   <link rel="stylesheet" type="text/css" href="./css/page.css" /> 
