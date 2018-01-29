@@ -38,6 +38,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<release.dir>${project.build.directory}/${project.artifactId}-${project.version}</release.dir>
+		<jdk.version>1.7</jdk.version>
 		<explibs.version>1.0-SNAPSHOT</explibs.version>
 		<mrp.plugin.version>1.0-SNAPSHOT</mrp.plugin.version>
 	</properties>
@@ -196,6 +197,16 @@
 	<build>
 		<plugins>
 
+			<!-- 指定项目JDK版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			
 			<!-- 版本打包插件，在dos跳转到项目根目录，依次执行（需保证没有引用快照、本地与SVN服务器内容完全一致）: 
 				1 发布基线到svn: mvn release:prepare 
 				2 发布引用到私服 : mvn release:perform -->
