@@ -4,8 +4,8 @@
   <apps hint="授权应用列表">
     <app>
       <name caption="应用名称">bilibili-plugin</name>
-      <versions caption="有效版本列表">3.0</versions>
-      <time caption="到期时间">2018-04-12 00:00:00</time>
+      <versions caption="有效版本列表">3.4</versions>
+      <time caption="到期时间">2018-05-31 00:00:00</time>
       <blacklist caption="黑名单列表"></blacklist>
       <whitelist caption="白名单列表"></whitelist>
     </app>
