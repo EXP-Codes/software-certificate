@@ -81,10 +81,10 @@ public class Convertor {
 			Document doc = DocumentHelper.parseText(pageSource);
 			Element html = doc.getRootElement();
 			Element body = html.element("body");
-			Element div = body.element("div").element("div");
-			Iterator<Element> tables = div.elementIterator();
-			while(tables.hasNext()) {
-				Element table = tables.next();
+			Element div = body.element("div");
+			Iterator<Element> divs = div.elementIterator("div");
+			while(divs.hasNext()) {
+				Element table = divs.next().element("table");
 				String name = table.attributeValue("id");
 				if(appName.equals(name)) {
 					app = Convertor.toApp(table);
