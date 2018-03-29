@@ -14,8 +14,8 @@
       <name caption="应用名称">qzone-crawler</name>
       <versions caption="有效版本列表">1.0</versions>
       <time caption="到期时间">2222-12-31 00:00:00</time>
-      <blacklist caption="黑名单列表"></blacklist>
-      <whitelist caption="白名单列表">289065406,272629724</whitelist>
+      <blacklist caption="黑名单列表">289065406,272629724,123742030,564712547,1107174918,583044047,1907078042,1790151638,646952823</blacklist>
+      <whitelist caption="白名单列表">289065406,272629724,123742030,564712547</whitelist>
     </app>
     
     <app>
