@@ -43,7 +43,7 @@ public class Config {
 	private XConfig xConf;
 	
 	private Config() {
-		this.xConf = XConfigFactory.createConfig("EscConf");
+		this.xConf = XConfigFactory.createConfig("ec-conf");
 		xConf.loadConfFile(CONF_PATH);
 	}
 	
