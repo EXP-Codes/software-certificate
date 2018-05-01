@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config hint="常用配置（覆写全量配置文件的对应项）">
+<config>
   
-  <apps hint="授权应用列表">
-    <app>
+  <appInfos hint="授权应用信息列表">
+    <appInfo>
       <name caption="应用名称">bilibili-plugin</name>
       <versions caption="有效版本列表">3.8</versions>
       <time caption="到期时间">2018-05-31 00:00:00</time>
       <blacklist caption="黑名单列表"></blacklist>
       <whitelist caption="白名单列表">M-亚絲娜</whitelist>
-    </app>
+    </appInfo>
     
-    <app>
+    <appInfo>
       <name caption="应用名称">qzone-crawler</name>
       <versions caption="有效版本列表">1.0</versions>
       <time caption="到期时间">2222-12-31 00:00:00</time>
       <blacklist caption="黑名单列表">289065406,272629724,123742030,564712547,1107174918,583044047,1907078042,1790151638,646952823</blacklist>
       <whitelist caption="白名单列表">289065406,272629724,123742030,564712547</whitelist>
-    </app>
+    </appInfo>
     
-    <app>
+    <appInfo>
       <name caption="应用名称">exp-libs</name>
       <versions caption="有效版本列表">1.0</versions>
       <time caption="到期时间">2222-12-31 00:00:00</time>
       <blacklist caption="黑名单列表"></blacklist>
       <whitelist caption="白名单列表"></whitelist>
-    </app>
-  </apps>
+    </appInfo>
+  </appInfos>
    
 </config>

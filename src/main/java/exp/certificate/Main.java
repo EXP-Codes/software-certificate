@@ -24,7 +24,7 @@ public class Main {
 	public static void main(String[] args) {
 		LogUtils.loadLogBackConfig();
 		
-		boolean isOk = Convertor.toPage(Config.getInstn().getApps());
+		boolean isOk = Convertor.toPage(Config.getInstn().getAppInfos());
 		log.info("生成软件验证页{}", (isOk ? "成功" : "失败"));
 	}
 	

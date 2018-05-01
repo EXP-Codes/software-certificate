@@ -59,12 +59,12 @@ public class Config {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<AppInfo> getApps() {
+	public List<AppInfo> getAppInfos() {
 		List<AppInfo> appList = new LinkedList<AppInfo>();
 		try {
 			Element root = xConf.loadConfFile(CONF_PATH);
-			Element apps = root.element("apps");
-			Iterator<Element> appIts = apps.elementIterator("app");
+			Element apps = root.element("appInfos");
+			Iterator<Element> appIts = apps.elementIterator("appInfo");
 			while(appIts.hasNext()) {
 				Element app = appIts.next();
 				String name = app.elementText("name");
