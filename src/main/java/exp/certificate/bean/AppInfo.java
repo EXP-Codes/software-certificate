@@ -10,7 +10,7 @@ package exp.certificate.bean;
  * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
-public class App {
+public class AppInfo {
 
 	/** 应用名称 */
 	private String name;
@@ -27,7 +27,7 @@ public class App {
 	/** 白名单 */
 	private String whitelist;
 	
-	public App(String name, String versions, String time, 
+	public AppInfo(String name, String versions, String time, 
 			String blacklist, String whitelist) {
 		this.name = (name == null ? "" : name.trim());
 		this.versions = (versions == null ? "" : versions.trim());

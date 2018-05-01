@@ -8,7 +8,7 @@ import org.dom4j.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import exp.certificate.bean.App;
+import exp.certificate.bean.AppInfo;
 import exp.libs.envm.Charset;
 import exp.libs.warp.conf.xml.XConfig;
 import exp.libs.warp.conf.xml.XConfigFactory;
@@ -59,8 +59,8 @@ public class Config {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<App> getApps() {
-		List<App> appList = new LinkedList<App>();
+	public List<AppInfo> getApps() {
+		List<AppInfo> appList = new LinkedList<AppInfo>();
 		try {
 			Element root = xConf.loadConfFile(CONF_PATH);
 			Element apps = root.element("apps");
@@ -73,7 +73,7 @@ public class Config {
 				String blacklist = app.elementText("blacklist");
 				String whitelist = app.elementText("whitelist");
 				
-				appList.add(new App(name, versions, time, blacklist, whitelist));
+				appList.add(new AppInfo(name, versions, time, blacklist, whitelist));
 			}
 			
 		} catch(Exception e) {

@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import exp.certificate.Config;
-import exp.certificate.bean.App;
+import exp.certificate.bean.AppInfo;
 import exp.libs.utils.encode.CryptoUtils;
 import exp.libs.utils.io.FileUtils;
 import exp.libs.utils.other.StrUtils;
@@ -20,7 +20,7 @@ import exp.libs.warp.tpl.Template;
 
 /**
  * <PRE>
- * 页面转换器
+ * 页面/应用信息转换器
  * </PRE>
  * <B>PROJECT：</B> exp-certificate
  * <B>SUPPORT：</B> EXP
@@ -30,18 +30,19 @@ import exp.libs.warp.tpl.Template;
  */
 public class Convertor {
 
+	/** 日志器 */
 	private final static Logger log = LoggerFactory.getLogger(Convertor.class);
 	
 	/** 私有化构造函数 */
 	protected Convertor() {}
 	
 	/**
-	 * 根据应用列表生成授权页面
-	 * @param apps 应用列表
-	 * @return 授权页面
+	 * 根据应用信息列表生成授权页面
+	 * @param appInfos 应用列表
+	 * @return 是否生成成功
 	 */
-	public static boolean toPage(List<App> apps) {
-		List<String> tables = toTables(apps);
+	public static boolean toPage(List<AppInfo> appInfos) {
+		List<String> tables = toTables(appInfos);
 		Template tpl = new Template(Config.PAGE_TPL, Config.DEFAULT_CHARSET);
 		tpl.set("tables", StrUtils.concat(tables, ""));
 		tpl.set("time", TimeUtils.getSysDate());
@@ -51,18 +52,18 @@ public class Convertor {
 	
 	/**
 	 * 根据应用列表生成对应的&lt;div&gt;模块
-	 * @param apps 应用列表
+	 * @param appInfos 应用信息列表
 	 * @return &lt;div&gt;模块
 	 */
-	private static List<String> toTables(List<App> apps) {
+	private static List<String> toTables(List<AppInfo> appInfos) {
 		List<String> tables = new LinkedList<String>();
 		Template tpl = new Template(Config.TABLE_TPL, Config.DEFAULT_CHARSET);
-		for(App app : apps) {
-			tpl.set("name", app.getName());
-			tpl.set("versions", CryptoUtils.toDES(app.getVersions()));
-			tpl.set("time", CryptoUtils.toDES(app.getTime()));
-			tpl.set("blacklist", CryptoUtils.toDES(app.getBlacklist()));
-			tpl.set("whitelist", CryptoUtils.toDES(app.getWhitelist()));
+		for(AppInfo appInfo : appInfos) {
+			tpl.set("name", appInfo.getName());
+			tpl.set("versions", CryptoUtils.toDES(appInfo.getVersions()));
+			tpl.set("time", CryptoUtils.toDES(appInfo.getTime()));
+			tpl.set("blacklist", CryptoUtils.toDES(appInfo.getBlacklist()));
+			tpl.set("whitelist", CryptoUtils.toDES(appInfo.getWhitelist()));
 			tables.add(tpl.getContent());
 		}
 		return tables;
@@ -72,11 +73,11 @@ public class Convertor {
 	 * 从页面提取应用授权信息
 	 * @param pageSource 页面源码
 	 * @param appName 应用名称
-	 * @return app对象
+	 * @return 应用信息对象
 	 */
 	@SuppressWarnings("unchecked")
-	public static App toApp(final String pageSource, final String appName) {
-		App app = null;
+	public static AppInfo toAppInfo(final String pageSource, final String appName) {
+		AppInfo app = null;
 		try {
 			Document doc = DocumentHelper.parseText(pageSource);
 			Element html = doc.getRootElement();
@@ -87,7 +88,7 @@ public class Convertor {
 				Element table = divs.next().element("table");
 				String name = table.attributeValue("id");
 				if(appName.equals(name)) {
-					app = Convertor.toApp(table);
+					app = Convertor.toAppInfo(table);
 					break;
 				}
 			}
@@ -98,12 +99,12 @@ public class Convertor {
 	}
 	
 	/**
-	 * 根据页面的&lt;table&gt;模块还原对应的App对象
+	 * 根据页面的&lt;table&gt;模块还原对应的应用信息对象
 	 * @param table &lt;table&gt;模块
-	 * @return App对象
+	 * @return 应用信息对象
 	 */
 	@SuppressWarnings("unchecked")
-	private static App toApp(Element table) {
+	private static AppInfo toAppInfo(Element table) {
 		String name = "";
 		String versions = "";
 		String time = "";
@@ -135,7 +136,7 @@ public class Convertor {
 				
 			}
 		}
-		return new App(name, versions, time, blacklist, whitelist);
+		return new AppInfo(name, versions, time, blacklist, whitelist);
 	}
 	
 }
