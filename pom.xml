@@ -145,40 +145,52 @@
 	          <artifactId>soapui</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>org.apache.xmlbeans</groupId>
-	          <artifactId>xmlbeans</artifactId>
-	        </exclusion>
-	        <exclusion>
 	          <groupId>net.webservices.client</groupId>
 	          <artifactId>soapui-xmlbeans</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>net.sf.json-lib</groupId>
-	          <artifactId>json-lib</artifactId>
+	          <groupId>org.seleniumhq.selenium</groupId>
+	          <artifactId>selenium-java</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>org.codehaus.jackson</groupId>
-	          <artifactId>jackson-xc</artifactId>
+	          <groupId>com.codeborne</groupId>
+	          <artifactId>phantomjsdriver</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>org.codehaus.jackson</groupId>
-	          <artifactId>jackson-smile</artifactId>
+	          <groupId>org.seleniumhq.selenium</groupId>
+	          <artifactId>selenium-chrome-driver</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>org.codehaus.jackson</groupId>
-	          <artifactId>jackson-mrbean</artifactId>
+	          <groupId>org.seleniumhq.selenium</groupId>
+	          <artifactId>selenium-htmlunit-driver</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>org.codehaus.jackson</groupId>
-	          <artifactId>jackson-jaxrs</artifactId>
+	          <groupId>com.sun.media</groupId>
+		  	  <artifactId>jai-imageio</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>org.codehaus.jackson</groupId>
-	          <artifactId>jackson-core-lgpl</artifactId>
+	          <groupId>org.tensorflow</groupId>
+	          <artifactId>tensorflow</artifactId>
 	        </exclusion>
 	        <exclusion>
-	          <groupId>org.codehaus.jackson</groupId>
-	          <artifactId>jackson-mapper-lgpl</artifactId>
+	          <groupId>org.tensorflow</groupId>
+	          <artifactId>libtensorflow</artifactId>
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.tensorflow</groupId>
+	          <artifactId>libtensorflow_jni</artifactId>
+	        </exclusion>
+	        <exclusion>
+	          <groupId>sun.misc</groupId>
+		  	  <artifactId>base64</artifactId>
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.jb</groupId>
+              <artifactId>beauty-eye</artifactId>
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.java-websocket</groupId>
+		      <artifactId>Java-WebSocket</artifactId>
 	        </exclusion>
 	      </exclusions>
 		</dependency>
