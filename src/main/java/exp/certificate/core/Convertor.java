@@ -33,6 +33,9 @@ public class Convertor {
 	/** 日志器 */
 	private final static Logger log = LoggerFactory.getLogger(Convertor.class);
 	
+	/** 断行长度:64 */
+	private final static int BREAK_LINE_LEN = 64;
+	
 	/** 私有化构造函数 */
 	protected Convertor() {}
 	
@@ -60,13 +63,22 @@ public class Convertor {
 		Template tpl = new Template(Config.TABLE_TPL, Config.DEFAULT_CHARSET);
 		for(AppInfo appInfo : appInfos) {
 			tpl.set("name", appInfo.getName());
-			tpl.set("versions", CryptoUtils.toDES(appInfo.getVersions()));
-			tpl.set("time", CryptoUtils.toDES(appInfo.getTime()));
-			tpl.set("blacklist", CryptoUtils.toDES(appInfo.getBlacklist()));
-			tpl.set("whitelist", CryptoUtils.toDES(appInfo.getWhitelist()));
+			tpl.set("versions", breakLine(CryptoUtils.toDES(appInfo.getVersions())));
+			tpl.set("time", breakLine(CryptoUtils.toDES(appInfo.getTime())));
+			tpl.set("blacklist", breakLine(CryptoUtils.toDES(appInfo.getBlacklist())));
+			tpl.set("whitelist", breakLine(CryptoUtils.toDES(appInfo.getWhitelist())));
 			tables.add(tpl.getContent());
 		}
 		return tables;
+	}
+	
+	/**
+	 * 对字符串断行(保证页面表单不会因为内容过长而变形)
+	 * @param str
+	 * @return
+	 */
+	private static String breakLine(String str) {
+		return StrUtils.breakLine(str, BREAK_LINE_LEN);	// 每64个字符断行一次
 	}
 	
 	/**
@@ -117,7 +129,7 @@ public class Convertor {
 			Element tr = trs.next();
 			List<Element> ths = tr.elements();
 			String key = ths.get(0).getTextTrim();
-			String val = ths.get(1).getTextTrim();
+			String val = StrUtils.trimAll(ths.get(1).getText());
 			
 			if("SOFTWARE-NAME".equals(key)) {
 				name = val;
