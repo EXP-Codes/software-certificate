@@ -100,7 +100,7 @@ public class Convertor {
 				Element table = divs.next().element("table");
 				String name = table.attributeValue("id");
 				if(appName.equals(name)) {
-					app = Convertor.toAppInfo(table);
+					app = toAppInfo(table);
 					break;
 				}
 			}
