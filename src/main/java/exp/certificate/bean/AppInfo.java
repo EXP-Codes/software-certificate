@@ -2,7 +2,7 @@ package exp.certificate.bean;
 
 /**
  * <PRE>
- * 应用对象
+ * 应用授权信息对象
  * </PRE>
  * <B>PROJECT：</B> exp-certificate
  * <B>SUPPORT：</B> EXP

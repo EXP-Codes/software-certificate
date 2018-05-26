@@ -3,13 +3,15 @@ package exp.certificate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import exp.certificate.core.Convertor;
+import exp.certificate.core.MakePage;
 import exp.libs.utils.other.LogUtils;
 
 
 /**
  * <PRE>
- * 程序入口
+ * 生成软件授权信息页面.
+ * ---------------------
+ * 	授权信息需在 ./conf/ec_conf.xml 中配置
  * </PRE>
  * <B>PROJECT：</B> exp-certificate
  * <B>SUPPORT：</B> EXP
@@ -19,12 +21,17 @@ import exp.libs.utils.other.LogUtils;
  */
 public class Main {
 	
+	/** 日志器 */
 	private final static Logger log = LoggerFactory.getLogger(Config.class);
 	
+	/**
+	 * 程序入口
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		LogUtils.loadLogBackConfig();
 		
-		boolean isOk = Convertor.toPage(Config.getInstn().getAppInfos());
+		boolean isOk = MakePage.toPage(Config.getInstn().getAppInfos());
 		log.info("生成软件验证页{}", (isOk ? "成功" : "失败"));
 	}
 	

@@ -1,7 +1,6 @@
-package exp.certificate.core;
+package exp.certificate.api;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Document;
@@ -10,17 +9,14 @@ import org.dom4j.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import exp.certificate.Config;
 import exp.certificate.bean.AppInfo;
 import exp.libs.utils.encode.CryptoUtils;
-import exp.libs.utils.io.FileUtils;
 import exp.libs.utils.other.StrUtils;
-import exp.libs.utils.time.TimeUtils;
-import exp.libs.warp.tpl.Template;
+import exp.libs.warp.net.http.HttpURLUtils;
 
 /**
  * <PRE>
- * 页面/应用信息转换器
+ * 页面信息转换器: 获取指定应用的授权信息
  * </PRE>
  * <B>PROJECT：</B> exp-certificate
  * <B>SUPPORT：</B> EXP
@@ -28,57 +24,23 @@ import exp.libs.warp.tpl.Template;
  * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
-public class Convertor {
+public class Certificate {
 
 	/** 日志器 */
-	private final static Logger log = LoggerFactory.getLogger(Convertor.class);
-	
-	/** 断行长度:64 */
-	private final static int BREAK_LINE_LEN = 64;
+	private final static Logger log = LoggerFactory.getLogger(Certificate.class);
 	
 	/** 私有化构造函数 */
-	protected Convertor() {}
+	protected Certificate() {}
 	
 	/**
-	 * 根据应用信息列表生成授权页面
-	 * @param appInfos 应用列表
-	 * @return 是否生成成功
+	 * 从页面提取应用授权信息
+	 * @param url 授权页面地址
+	 * @param appName 应用名称
+	 * @return 应用信息对象
 	 */
-	public static boolean toPage(List<AppInfo> appInfos) {
-		List<String> tables = toTables(appInfos);
-		Template tpl = new Template(Config.PAGE_TPL, Config.DEFAULT_CHARSET);
-		tpl.set("tables", StrUtils.concat(tables, ""));
-		tpl.set("time", TimeUtils.getSysDate());
-		return FileUtils.write(Config.PAGE_PATH, 
-				tpl.getContent(), Config.DEFAULT_CHARSET, false);
-	}
-	
-	/**
-	 * 根据应用列表生成对应的&lt;div&gt;模块
-	 * @param appInfos 应用信息列表
-	 * @return &lt;div&gt;模块
-	 */
-	private static List<String> toTables(List<AppInfo> appInfos) {
-		List<String> tables = new LinkedList<String>();
-		Template tpl = new Template(Config.TABLE_TPL, Config.DEFAULT_CHARSET);
-		for(AppInfo appInfo : appInfos) {
-			tpl.set("name", appInfo.getName());
-			tpl.set("versions", breakLine(CryptoUtils.toDES(appInfo.getVersions())));
-			tpl.set("time", breakLine(CryptoUtils.toDES(appInfo.getTime())));
-			tpl.set("blacklist", breakLine(CryptoUtils.toDES(appInfo.getBlacklist())));
-			tpl.set("whitelist", breakLine(CryptoUtils.toDES(appInfo.getWhitelist())));
-			tables.add(tpl.getContent());
-		}
-		return tables;
-	}
-	
-	/**
-	 * 对字符串断行(保证页面表单不会因为内容过长而变形)
-	 * @param str
-	 * @return
-	 */
-	private static String breakLine(String str) {
-		return StrUtils.breakLine(str, BREAK_LINE_LEN);	// 每64个字符断行一次
+	public static AppInfo getAppInfo(final String URL, final String APP_NAME) {
+		String pageSource = HttpURLUtils.doGet(URL);
+		return toAppInfo(pageSource, APP_NAME);
 	}
 	
 	/**
@@ -88,7 +50,7 @@ public class Convertor {
 	 * @return 应用信息对象
 	 */
 	@SuppressWarnings("unchecked")
-	public static AppInfo toAppInfo(final String pageSource, final String appName) {
+	private static AppInfo toAppInfo(String pageSource, String appName) {
 		AppInfo app = null;
 		try {
 			Document doc = DocumentHelper.parseText(pageSource);
