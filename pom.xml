@@ -11,8 +11,8 @@
 
     <name>EXP应用授权程序</name>
     <description>生成应用授权页面</description>
-    <url>项目SVN路径(可选)</url>
-    <inceptionYear>工程的初始时间(可选)</inceptionYear>
+    <url>https://github.com/lyy289065406/certificate/trunk</url>
+    <inceptionYear>2018-05-26</inceptionYear>
 
     <!--项目的问题管理系统(可选)-->
     <issueManagement>
@@ -233,6 +233,26 @@
               <artifactId>commons-compiler</artifactId>
             </exclusion>
           </exclusions>
+        </dependency>
+        
+        <!-- logback -->
+        <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-core</artifactId>
+          <version>1.0.13</version>
+          <scope>runtime</scope>
+        </dependency>
+        <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+          <version>1.0.13</version>
+          <scope>runtime</scope>
+        </dependency>
+        <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-access</artifactId>
+          <version>1.0.13</version>
+          <scope>runtime</scope>
         </dependency>
         
         <!-- 单元测试 -->
