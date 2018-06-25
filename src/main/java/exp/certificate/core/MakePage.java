@@ -15,10 +15,10 @@ import exp.libs.warp.tpl.Template;
  * <PRE>
  * 生成授权校验页面
  * </PRE>
- * <B>PROJECT：</B> exp-certificate
- * <B>SUPPORT：</B> EXP
- * @version   1.0 2017-12-17
- * @author    EXP: <a href="http://www.exp-blog.com">www.exp-blog.com</a>
+ * <B>PROJECT : </B> exp-certificate
+ * <B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a>
+ * @version   1.0 # 2017-12-17
+ * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
 public class MakePage {
@@ -26,7 +26,7 @@ public class MakePage {
 	/** 断行长度:64 */
 	private final static int BREAK_LINE_LEN = 64;
 	
-	/** 私有化构造函数 */
+	/** 私有化构造函�? */
 	protected MakePage() {}
 	
 	/**
@@ -44,7 +44,7 @@ public class MakePage {
 	}
 	
 	/**
-	 * 根据应用列表生成对应的&lt;div&gt;模块
+	 * 根据应用列表生成对应�?&lt;div&gt;模块
 	 * @param appInfos 应用信息列表
 	 * @return &lt;div&gt;模块
 	 */
@@ -63,12 +63,12 @@ public class MakePage {
 	}
 	
 	/**
-	 * 对字符串断行(保证页面表单不会因为内容过长而变形)
+	 * 对字符串断行(保证页面表单不会因为内容过长而变�?)
 	 * @param str
 	 * @return
 	 */
 	private static String breakLine(String str) {
-		return StrUtils.breakLine(str, BREAK_LINE_LEN);	// 每64个字符断行一次
+		return StrUtils.breakLine(str, BREAK_LINE_LEN);	// �?64个字符断行一�?
 	}
 	
 }

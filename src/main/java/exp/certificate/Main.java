@@ -13,15 +13,15 @@ import exp.libs.utils.other.LogUtils;
  * ---------------------
  * 	授权信息需在 ./conf/ec_conf.xml 中配置
  * </PRE>
- * <B>PROJECT：</B> exp-certificate
- * <B>SUPPORT：</B> EXP
- * @version   1.0 2017-12-17
- * @author    EXP: <a href="http://www.exp-blog.com">www.exp-blog.com</a>
+ * <B>PROJECT : </B> exp-certificate
+ * <B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a>
+ * @version   1.0 # 2017-12-17
+ * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
 public class Main {
 	
-	/** 日志器 */
+	/** 日志�? */
 	private final static Logger log = LoggerFactory.getLogger(Config.class);
 	
 	/**
