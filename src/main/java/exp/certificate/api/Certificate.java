@@ -19,21 +19,21 @@ import exp.libs.warp.net.http.HttpURLUtils;
  * 页面信息转换器: 获取指定应用的授权信息
  * </PRE>
  * <B>PROJECT : </B> exp-certificate
- * <B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a>
+ * <B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
  * @version   1.0 # 2017-12-17
  * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
 public class Certificate {
 
-	/** 日志�? */
+	/** 日志器 */
 	private final static Logger log = LoggerFactory.getLogger(Certificate.class);
 	
-	/** 私有化构造函�? */
+	/** 私有化构造函数 */
 	protected Certificate() {}
 	
 	/**
-	 * 从页面提取应用授权信�?
+	 * 从页面提取应用授权信息
 	 * @param url 授权页面地址
 	 * @param appName 应用名称
 	 * @return 应用信息对象
@@ -44,7 +44,7 @@ public class Certificate {
 	}
 	
 	/**
-	 * 从页面提取应用授权信�?
+	 * 从页面提取应用授权信息
 	 * @param pageSource 页面源码
 	 * @param appName 应用名称
 	 * @return 应用信息对象
@@ -67,13 +67,13 @@ public class Certificate {
 				}
 			}
 		} catch (Exception e) {
-			log.error("从页面提取应�? [{}] 信息失败:\r\n{}", appName, pageSource, e);
+			log.error("从页面提取应用 [{}] 信息失败:\r\n{}", appName, pageSource, e);
 		}
 		return app;
 	}
 	
 	/**
-	 * 根据页面�?&lt;table&gt;模块还原对应的应用信息对�?
+	 * 根据页面的&lt;table&gt;模块还原对应的应用信息对象
 	 * @param table &lt;table&gt;模块
 	 * @return 应用信息对象
 	 */

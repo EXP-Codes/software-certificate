@@ -5,7 +5,7 @@ package exp.certificate.bean;
  * 应用授权信息对象
  * </PRE>
  * <B>PROJECT : </B> exp-certificate
- * <B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a>
+ * <B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
  * @version   1.0 # 2017-12-17
  * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
@@ -21,10 +21,10 @@ public class AppInfo {
 	/** 授权时间 */
 	private String time;
 	
-	/** 黑名�? */
+	/** 黑名单 */
 	private String blacklist;
 	
-	/** 白名�? */
+	/** 白名单 */
 	private String whitelist;
 	
 	public AppInfo(String name, String versions, String time, 
