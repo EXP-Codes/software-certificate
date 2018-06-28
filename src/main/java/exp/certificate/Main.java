@@ -13,8 +13,8 @@ import exp.libs.utils.other.LogUtils;
  * ---------------------
  * 	授权信息需在 ./conf/ec_conf.xml 中配置
  * </PRE>
- * <B>PROJECT : </B> exp-certificate
- * <B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
+ * <br/><B>PROJECT : </B> exp-certificate
+ * <br/><B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
  * @version   1.0 # 2017-12-17
  * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
