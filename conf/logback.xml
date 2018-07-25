@@ -74,13 +74,11 @@
 	</appender>
 	
 	<!-- 主程序日志 -->
-	<logger name="exp.bilibili.plugin" level="info" additivity="true">
+	<logger name="exp.certificate" level="info" additivity="true">
 		<appender-ref ref="app" />
 	</logger>
 	
 	<!-- 经验库日志 -->
-	<logger name="exp.libs.utils.format.JsonUtils" level="info" additivity="false">
-    </logger>
 	<logger name="exp.libs" level="info" additivity="false">
 		<appender-ref ref="other" />
 		<appender-ref ref="exception" />
