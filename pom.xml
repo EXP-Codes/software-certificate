@@ -5,12 +5,12 @@
 
     <!--项目基本信息(必填)-->
     <groupId>exp.certificate</groupId>
-    <artifactId>exp-certificate</artifactId>
+    <artifactId>software-certificate</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>EXP应用授权程序</name>
-    <description>生成应用授权页面</description>
+    <name>软件授权插件</name>
+    <description>生成软件授权页面、并提供软件授权核查接口</description>
     <url>https://github.com/lyy289065406/certificate/trunk</url>
     <inceptionYear>2018-05-26</inceptionYear>
 
