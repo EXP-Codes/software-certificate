@@ -22,11 +22,11 @@
 　这个静态页面初衷是用来介绍Repository的，但是也可以利用它作为一个静态服务页，实现其他功能。
 
 > 为某个Repository发布静态页面的方法：
-<br/>　　（1） 打开这个Repository的仓库首页，如：[https://github.com/lyy289065406/certificate/settings](https://github.com/lyy289065406/certificate/settings)
+<br/>　　（1） 打开这个Repository的仓库首页(https://github.com/lyy289065406/certificate/settings)
 <br/>　　（2） 进入 `Settings` 页面
 <br/>　　（3） 找到 `GitHub Pages`，在 `Source`下面有一个下拉框， 默认是 `None`， 修改为 `master branch`
-<br/>　　（4） 然后刷新 `Settings` 页面，在 `GitHub Pages` 的位置会提示：Your site is published at [https://lyy289065406.github.io/certificate/](https://lyy289065406.github.io/certificate/)
-<br/>　　（5） 记下这个页面地址，然后在Repository根目录新建一个 `index.html` 文件，写入页面内容，就可以通过这个页面访问它了
+<br/>　　（4） 然后刷新 `Settings` 页面，在 `GitHub Pages` 的位置会提示：Your site is published at `xxx`
+<br/>　　（5） 在Repository根目录新建一个 `index.html` 文件，写入页面内容，就可以通过这个发布地址访问它了
 
 
 ## 使用方式
