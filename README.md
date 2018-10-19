@@ -6,7 +6,7 @@
 
 ## 运行环境
 
-　![](https://img.shields.io/badge/Platform-Windows%20x64-brightgreen.svg)  ![](https://img.shields.io/badge/Platform-Unix%20x64-brightgreen.svg)  ![](https://img.shields.io/badge/JDK-1.7%2B-brightgreen.svg)
+　![](https://img.shields.io/badge/Platform-Windows|Unix%20x64-brightgreen.svg)  ![](https://img.shields.io/badge/JDK-1.7%2B-brightgreen.svg)
 
 ## 插件介绍
 
