@@ -1,5 +1,4 @@
 # software-certificate
-　软件授权插件
 
 > <b>软件授权清单&nbsp;:&nbsp;</b>[[ Management-Page ]](https://lyy289065406.github.io/certificate/)
 
@@ -9,9 +8,18 @@
 
 　![](https://img.shields.io/badge/Platform-Windows%20x64-brightgreen.svg)  ![](https://img.shields.io/badge/Platform-Unix%20x64-brightgreen.svg)  ![](https://img.shields.io/badge/JDK-1.7%2B-brightgreen.svg)
 
-## 软件介绍
+## 插件介绍
 
-.....
+　此插件是供开发者使用的，通过它可以利用Github服务器发布若干个应用的授权信息。
+
+　然后这些应用可以通过Github服务器提取自身的授权信息完成自检。
+
+　目前提供的自检方案主要有：
+
+- 有效时间校验
+- 有效版本校验
+- 黑名单校验
+- 白名单校验
 
 
 ## 实现原理
@@ -25,7 +33,7 @@
 
 
 > **为某个Repository发布静态页面的方法：**
-<br/>　　（1） 打开这个Repository的仓库首页(https://github.com/lyy289065406/certificate/settings)
+<br/>　　（1） 打开这个Repository的仓库首页
 <br/>　　（2） 进入 `Settings` 页面
 <br/>　　（3） 找到 `GitHub Pages`，在 `Source`下面有一个下拉框， 默认是 `None`， 修改为 `master branch`
 <br/>　　（4） 然后刷新 `Settings` 页面，在 `GitHub Pages` 的位置会提示：Your site is published at `xxx`
