@@ -82,7 +82,7 @@
   <version>1.0</version>
 </dependency>
 ```
-- 02.　构件内提供了API：`exp.certificate.api.getAppInfo` ，可据此从 `xxx-url` 获取自身的授权信息
+- 02.　构件内提供了API：`exp.certificate.api.Certificate.getAppInfo()` ，可据此从 `xxx-url` 获取自身的授权信息
 - 03.　获取到的授权信息会以明文方式保存到 `exp.certificate.bean.AppInfo`， 按需使用即可
 
 
