@@ -54,8 +54,8 @@
 　
 　**在静态页面维护被授权应用的信息：**
 
-- 01. 通过 git 命令 clone 这个插件仓库到本地，并通过 Eclipse 导入这个插件项目
-- 02. 修改 `./conf/ec_conf.xml` 配置文件，在节点 `<appInfos>` 下配置被授权的应用信息，格式为：
+- 01.　通过 git 命令 clone 这个插件仓库到本地，并通过 Eclipse 导入这个插件项目
+- 02.　修改 `./conf/ec_conf.xml` 配置文件，在节点 `<appInfos>` 下配置被授权的应用信息，格式为：
 ```xml
 <!-- 具体的值根据实际需要去配置即可 -->
 <appInfo>
@@ -66,9 +66,16 @@
   <whitelist caption="白名单列表">xxx</whitelist>
 </appInfo>
 ```
-- 03. 运行 `exp.certificate.Main` 类，会自动根据 `./conf/ec_conf.xml` 配置文件的内容刷新 `./index.html` 文件
-- 04. 通过 git 提交变更，即成功把被授权应用的信息提交到了 Github服务器
-- 05. 此时刷新静态页面，会发现页面已变更（**为了保证信息安全，本插件生成的授权信息均已加密**）
+- 03.　运行 `exp.certificate.Main` 类，会自动根据 `./conf/ec_conf.xml` 配置文件的内容刷新 `./index.html` 文件
+- 04.　通过 git 提交变更，即成功把被授权应用的信息提交到了 Github服务器
+- 05.　此时刷新静态页面，会发现页面已变更（**为了保证信息安全，本插件生成的授权信息均已加密**），如：
+![静态页面](https://raw.githubusercontent.com/lyy289065406/certificate/master/doc/01-%E8%BD%AF%E4%BB%B6%E6%8E%88%E6%9D%83%E6%A0%A1%E9%AA%8C%E5%8E%9F%E7%90%86.png)
+
+
+
+　**应用从静态页面提取自己的授权信息进行自检：**
+
+- 01.　提供了两个API
 
 
 ## 版权声明
