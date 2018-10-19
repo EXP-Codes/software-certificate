@@ -14,10 +14,10 @@
 
 　然后这些应用可以通过Github服务器提取自身的授权信息完成自检。
 
-　目前提供的自检方案主要有：
+　目前**提供的自检方案**主要有：
 
-- 有效时间校验
 - 有效版本校验
+- 有效时间校验
 - 黑名单校验
 - 白名单校验
 
@@ -42,8 +42,8 @@
 
 　回到这个插件，其实原理就很简单了，要实现的功能主要有两个：
 
-- 通过更新index.html，在静态页面维护被授权应用的信息
-- 应用从静态页面提取自己的授权信息进行自检
+- 通过更新 `index.html`，在 `xxx-url` 静态页面维护被授权应用的信息
+- 应用从 `xxx-url` 静态页面提取自身的授权信息进行自检
 
 
 ## 使用方式
@@ -51,7 +51,7 @@
 　由于插件存在两部分功能，因此使用方式也是对应拆分为两部分。
 
 
-<br/>　**在静态页面维护被授权应用的信息：**
+<br/>　**在 `xxx-url` 静态页面维护被授权应用的信息：**
 
 - 01.　通过 git 命令 clone 这个插件仓库到本地，并通过 Eclipse 导入这个插件项目
 - 02.　修改 `./conf/ec_conf.xml` 配置文件，在节点 `<appInfos>` 下配置被授权的应用信息，格式为：
@@ -67,14 +67,23 @@
 ```
 - 03.　运行 `exp.certificate.Main` 类，会自动根据 `./conf/ec_conf.xml` 配置文件的内容刷新 `./index.html` 文件
 - 04.　通过 git 提交变更，即成功把被授权应用的信息提交到了 Github服务器
-- 05.　此时刷新静态页面，会发现页面已变更（**为了保证信息安全，本插件所生成的授权信息均已加密处理**），如：
+- 05.　此时刷新静态页面地址 `xxx-url`，会发现页面内容已变更（**为了保证信息安全，所生成的授权信息均已加密处理**），如：
 ![静态页面](https://raw.githubusercontent.com/lyy289065406/certificate/master/doc/02-%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%8E%88%E6%9D%83%E5%BA%94%E7%94%A8%E4%BF%A1%E6%81%AF.png)
 
 
 
-<br/>　**应用从静态页面提取自己的授权信息进行自检：**
+<br/>　**应用从 `xxx-url` 静态页面提取自身的授权信息进行自检：**
 
-- 01.　提供了两个API
+- 01.　通过 `maven install` 命令发布本插件作为 jar构件，目标应用通过 pom.xml 依赖此构件：
+```xml
+<dependency>
+  <groupId>exp.certificate</groupId>
+  <artifactId>software-certificate</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+- 02.　构件内提供了API：`exp.certificate.api.getAppInfo` ，可据此从 `xxx-url` 获取自身的授权信息
+- 03.　获取到的授权信息会以明文方式保存到 `exp.certificate.bean.AppInfo`， 按需使用即可
 
 
 ## 版权声明
