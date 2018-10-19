@@ -2,7 +2,20 @@
 
 > <b>软件授权清单&nbsp;:&nbsp;</b>[[ Management-Page ]](https://lyy289065406.github.io/certificate/)
 
+------
 
+## 运行环境
+
+　![](https://img.shields.io/badge/Platform-Windows%20x64-brightgreen.svg)　![](https://img.shields.io/badge/Platform-Unix%20x64-brightgreen.svg)  ![](https://img.shields.io/badge/JDK-1.7%2B-brightgreen.svg)
+
+## 软件介绍
+
+.....
+
+
+## 运行原理
+
+![运行原理](https://raw.githubusercontent.com/lyy289065406/certificate/master/doc/01-%E8%BD%AF%E4%BB%B6%E6%8E%88%E6%9D%83%E6%A0%A1%E9%AA%8C%E5%8E%9F%E7%90%86.png)
 
 ## 版权声明
 
