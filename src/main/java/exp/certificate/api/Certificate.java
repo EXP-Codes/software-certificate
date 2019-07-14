@@ -34,8 +34,8 @@ public class Certificate {
 	
 	/**
 	 * 从页面提取应用授权信息
-	 * @param url 授权页面地址
-	 * @param appName 应用名称
+	 * @param URL 授权页面地址
+	 * @param APP_NAME 应用名称
 	 * @return 应用信息对象
 	 */
 	public static AppInfo getAppInfo(final String URL, final String APP_NAME) {
