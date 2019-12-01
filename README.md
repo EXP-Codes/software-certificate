@@ -25,7 +25,7 @@
 
 ## 实现原理
 
-![实现原理](https://github.com/lyy289065406/certificate/master/doc/01-%E8%BD%AF%E4%BB%B6%E6%8E%88%E6%9D%83%E6%A0%A1%E9%AA%8C%E5%8E%9F%E7%90%86.png)
+![实现原理](https://github.com/lyy289065406/certificate/blob/master/doc/01-%E8%BD%AF%E4%BB%B6%E6%8E%88%E6%9D%83%E6%A0%A1%E9%AA%8C%E5%8E%9F%E7%90%86.png)
 
 
 　在Github的每个Repository都是可以发布一个静态页面的，而且这个静态页面可以在公网访问。
@@ -69,7 +69,7 @@
 - 03.　运行 `exp.certificate.Main` 类，会自动根据 `./conf/ec_conf.xml` 配置文件的内容刷新 `./index.html` 文件
 - 04.　通过 git 提交变更，即成功把被授权应用的信息提交到了 Github服务器
 - 05.　此时刷新静态页面地址 `xxx-url`，会发现页面内容已变更（**为了保证信息安全，所生成的授权信息均已加密处理**），如：
-![静态页面](https://github.com/lyy289065406/certificate/master/doc/02-%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%8E%88%E6%9D%83%E5%BA%94%E7%94%A8%E4%BF%A1%E6%81%AF.png)
+![静态页面](https://github.com/lyy289065406/certificate/blob/master/doc/02-%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%8E%88%E6%9D%83%E5%BA%94%E7%94%A8%E4%BF%A1%E6%81%AF.png)
 
 
 
