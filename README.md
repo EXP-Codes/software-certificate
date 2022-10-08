@@ -82,9 +82,9 @@
 
 ```xml
 <dependency>
-  <groupId>exp.certificate</groupId>
-  <artifactId>software-certificate</artifactId>
-  <version>1.0</version>
+    <groupId>com.exp-blog</groupId>
+    <artifactId>software-certificate</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
 </dependency>
 ```
 
