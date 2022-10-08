@@ -5,11 +5,11 @@ import java.util.List;
 
 import exp.certificate.Config;
 import exp.certificate.bean.AppInfo;
-import exp.libs.utils.encode.CryptoUtils;
-import exp.libs.utils.io.FileUtils;
-import exp.libs.utils.other.StrUtils;
+import exp.libs.encode.CryptoUtils;
+import exp.libs.utils.file.FileTemplate;
+import exp.libs.utils.file.FileUtils;
+import exp.libs.utils.str.StrUtils;
 import exp.libs.utils.time.TimeUtils;
-import exp.libs.warp.tpl.Template;
 
 /**
  * <PRE>
@@ -36,10 +36,10 @@ public class MakePage {
 	 */
 	public static boolean toPage(List<AppInfo> appInfos) {
 		List<String> tables = toTables(appInfos);
-		Template tpl = new Template(Config.PAGE_TPL, Config.DEFAULT_CHARSET);
+		FileTemplate tpl = new FileTemplate(Config.PAGE_TPL, Config.DEFAULT_CHARSET);
 		tpl.set("tables", StrUtils.concat(tables, ""));
 		tpl.set("time", TimeUtils.getSysDate());
-		return FileUtils.write(Config.PAGE_PATH, 
+		return FileUtils.write(Config.PAGE_PATH,
 				tpl.getContent(), Config.DEFAULT_CHARSET, false);
 	}
 	
@@ -50,7 +50,7 @@ public class MakePage {
 	 */
 	private static List<String> toTables(List<AppInfo> appInfos) {
 		List<String> tables = new LinkedList<String>();
-		Template tpl = new Template(Config.TABLE_TPL, Config.DEFAULT_CHARSET);
+		FileTemplate tpl = new FileTemplate(Config.TABLE_TPL, Config.DEFAULT_CHARSET);
 		for(AppInfo appInfo : appInfos) {
 			tpl.set("name", appInfo.getName());
 			tpl.set("versions", breakLine(CryptoUtils.toDES(appInfo.getVersions())));

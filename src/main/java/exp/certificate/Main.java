@@ -1,10 +1,10 @@
 package exp.certificate;
 
+import exp.libs.log.LogUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import exp.certificate.core.MakePage;
-import exp.libs.utils.other.LogUtils;
 
 
 /**

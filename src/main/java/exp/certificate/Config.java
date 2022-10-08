@@ -4,14 +4,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import exp.libs.conf.xml.XConfig;
+import exp.libs.conf.xml.XConfigFactory;
 import org.dom4j.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import exp.certificate.bean.AppInfo;
 import exp.libs.envm.Charset;
-import exp.libs.warp.conf.xml.XConfig;
-import exp.libs.warp.conf.xml.XConfigFactory;
 
 
 /**
@@ -36,7 +36,7 @@ public class Config {
 	
 	public final static String TABLE_TPL = "/exp/certificate/core/table.tpl";
 	
-	public final static String PAGE_PATH = "./index.html";
+	public final static String PAGE_PATH = "./docs/index.html";
 	
 	private static volatile Config instance;
 	
