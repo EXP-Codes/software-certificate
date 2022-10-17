@@ -104,13 +104,13 @@
                         </goals>
                         <configuration>
                             <target>
-                                <echo>拷贝页面样式数据</echo>
-                                <copy todir="${release.dir}/css">
-                                    <fileset dir="css"></fileset>
-                                </copy>
                                 <echo>拷贝项目配置文件</echo>
                                 <copy todir="${release.dir}/conf">
                                     <fileset dir="conf" />
+                                </copy>
+                                <echo>拷贝前端页面</echo>
+                                <copy todir="${release.dir}/docs">
+                                    <fileset dir="docs"></fileset>
                                 </copy>
                             </target>
                         </configuration>
