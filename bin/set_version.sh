@@ -2,7 +2,7 @@
 # 设置 pom.xml 中的项目版本号
 #-----------------------------------------------------------------
 # 命令执行示例：
-# bin/set_version.ps1 [old_version] [new_version]
+# bin/set_version.sh [old_version] [new_version]
 #-----------------------------------------------------------------
 
 OLD_VERSION="<version>$1</version>"
