@@ -11,9 +11,9 @@ FILEPATH=$3
 
 # Mac
 if [ "$(uname)" == "Darwin" ]; then
-    sed -i '' "s/${FROM}/${TO}/g" ${FILEPATH}
+    sed -i '' "s@${FROM}@${TO}@g" ${FILEPATH}
 
 # Linux
 else
-    sed -i "s/${FROM}/${TO}/g" ${FILEPATH}
+    sed -i "s@${FROM}@${TO}@g" ${FILEPATH}
 fi
