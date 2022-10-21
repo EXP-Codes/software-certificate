@@ -84,7 +84,7 @@
 <dependency>
     <groupId>com.exp-blog</groupId>
     <artifactId>software-certificate</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>${LATEST_VERSION}</version>
 </dependency>
 ```
 
