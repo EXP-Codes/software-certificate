@@ -13,8 +13,10 @@
  	
   <div> 
    <br />
-   <h2>SOFTWARE-CERTIFICATE-LIST</h2> 
-   <br /> 
+   <h2>SOFTWARE-CERTIFICATE-LIST</h2>
+   <br />
+   (<a href="./javadocs/index.html" target="_blank">Javadoc</a>)
+   <br />
    
 @{tables}@
   </div>  
