@@ -22,7 +22,7 @@ import exp.certificate.bean.AppInfo;
  * <br/><B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
  * @version   1.0 # 2017-12-17
  * @author    EXP: 272629724@qq.com
- * @since     jdk版本：jdk1.6
+ * @since     jdk版本：jdk1.8
  */
 public class Certificate {
 
